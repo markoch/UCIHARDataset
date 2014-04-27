@@ -1,4 +1,3 @@
-Human Activity Recognition Using Smartphones Dataset
 Version 1.0
 ====================
 The run_analsis.R script file will analyze the Human Activity Recognition Using Smartphones Dataset
@@ -37,6 +36,6 @@ This steps creates the first data set containing the mean and standard deviation
 The test data and training data is created by merging the Activity, Subject and meassurement data. Finally
 the test and training data is merged into one data set.
 ### Creating the average data set
-This steps creates the second data set containing for each activity and eah person the mean of every meassurement. 
+This steps creates the second data set containing for each activity and each person the mean of every meassurement. 
 ### Writing Output files
 The output files are created in the last step. The data in the output files is encoded in CSV format and stored with txt file extension.
