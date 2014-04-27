@@ -7,9 +7,9 @@ message("Reading basic information")
 activity <- read.table("activity_labels.txt", col.names=c("ColumnID", "Activity"),colClasses = "character");
 features <- read.table("features.txt", col.names=c("ColumnID", "ColumnName"));
 columnHeader <- features[,"ColumnName"];
-mean_std <- c(".*mean.*", ".*std.*");
-mean_std_header <- unique (grep(paste(mean_std,collapse="|"),features$ColumnName, value=TRUE));
-columnToUse <- which(is.element(features$ColumnName, mean_std_header))
+meanStd <- c(".*mean.*", ".*std.*");
+meanStdHeader <- unique (grep(paste(meanStd,collapse="|"),features$ColumnName, value=TRUE));
+columnToUse <- which(is.element(features$ColumnName, meanStdHeader))
 
 ##Reading the subject, acitivity and test data
 message("Reading test data")
@@ -33,9 +33,9 @@ x_train_result <- x_train[,columnToUse]
 ##############################################################################################################
 message("Creating the mean and standard deviation data set")
 x_test_result <- cbind(activity_test, subject_test,x_test_result)
-names(x_test_result) <- c("Activity", "Subject", mean_std_header)
+names(x_test_result) <- c("Activity", "Subject", meanStdHeader)
 x_train_result <- cbind(activity_train, subject_train,x_train_result)
-names(x_train_result) <- c("Activity", "Subject", mean_std_header)
+names(x_train_result) <- c("Activity", "Subject", meanStdHeader)
 UCIHARDataset <- rbind(x_test_result,x_train_result)
 message("Name: UCIHARDataset")
 message("(Rows: " , nrow(UCIHARDataset), appendLF=FALSE)
