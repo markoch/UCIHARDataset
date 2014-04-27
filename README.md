@@ -3,7 +3,8 @@
 ## Human Activity Recognition Using Smartphones Dataset - Version 1.0
 ##
 The file run_analysis.R script file will analyze the UCI HAR dataset. To execute the analysis
-place the run_analysis.R file in your UCIHARDataset main directory and source the R script file.
+place the run_analysis.R file in your UCIHARDataset main directory and source the R script file
+in RStudio.
 
 ## Requirements
 The run_analysis.R script file requires reshape2 R package to be installed.
