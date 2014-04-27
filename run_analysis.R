@@ -13,15 +13,15 @@ columnToUse <- which(is.element(features$ColumnName, meanStdHeader))
 
 ##Reading the subject, acitivity and test data
 message("Reading test data")
-subject_test <- read.table(file.path("test","/","subject_test.txt"))
-activity_test <- read.table(file.path("test","/","y_test.txt"), col.names=c("Activity"))
-x_test <- read.table(file.path("test","/","X_test.txt"))
+subject_test <- read.table(file.path("test","subject_test.txt"))
+activity_test <- read.table(file.path("test","y_test.txt"), col.names=c("Activity"))
+x_test <- read.table(file.path("test","X_test.txt"))
 
 ##Reading the subject, acitivity and training data
 message("Reading training data")
-subject_train <- read.table(file.path("train","/","subject_train.txt"))
-activity_train <- read.table(file.path("train","/","y_train.txt"), col.names=c("Activity"))
-x_train <- read.table(file.path("train","/","X_train.txt"))
+subject_train <- read.table(file.path("train","subject_train.txt"))
+activity_train <- read.table(file.path("train","y_train.txt"), col.names=c("Activity"))
+x_train <- read.table(file.path("train","X_train.txt"))
 
 ## Create data sets
 message("Processing data")
