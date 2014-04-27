@@ -38,7 +38,7 @@ message("(Rows: " , nrow(UCIHARDataset), appendLF=FALSE)
 message(" Columns: " , ncol(UCIHARDataset), ")")
 
 message("Creating the average data set")
-AverageDataset <- melt(UCIHARDataset, meassure.vars=mean_std_header, id=c("Activity", "Subject"))
+AverageDataset <- melt(UCIHARDataset, meassure.vars=meanStdHeader, id=c("Activity", "Subject"))
 AverageDataset <- dcast(AverageDataset, Activity + Subject ~ variable, mean)
 message("Name: AverageDataset")
 message("(Rows: " , nrow(AverageDataset), appendLF=FALSE)
