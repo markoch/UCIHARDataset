@@ -1,6 +1,3 @@
-################################################################
-##setwd("/home/marco/DataScience/data/GetAndClean")
-
 library(reshape2)
 ##Reading basic information
 message("Reading basic information")
@@ -30,7 +27,6 @@ activity_train <- factor(x=activity_train$Activity,labels=activity$Activity,orde
 x_test_result <- x_test[,columnToUse]
 x_train_result <- x_train[,columnToUse]
 
-##############################################################################################################
 message("Creating the mean and standard deviation data set")
 x_test_result <- cbind(activity_test, subject_test,x_test_result)
 names(x_test_result) <- c("Activity", "Subject", meanStdHeader)
@@ -41,7 +37,6 @@ message("Name: UCIHARDataset")
 message("(Rows: " , nrow(UCIHARDataset), appendLF=FALSE)
 message(" Columns: " , ncol(UCIHARDataset), ")")
 
-##############################################################################################################
 message("Creating the average data set")
 AverageDataset <- melt(UCIHARDataset, meassure.vars=mean_std_header, id=c("Activity", "Subject"))
 AverageDataset <- dcast(AverageDataset, Activity + Subject ~ variable, mean)
